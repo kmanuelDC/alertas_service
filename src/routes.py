@@ -9,7 +9,7 @@ routes = Blueprint('routes', __name__)
 controller = {
      "conditions": CondicionesController(),
      "fleets": FleetsController(),
-     "user": UserController()
+     "user" : UserController()
  }
 
 
@@ -32,6 +32,6 @@ routes.add_url_rule('/v1/get/all/parameters', view_func=controller['conditions']
 
 #USERS
 routes.add_url_rule('/v1/create/user', view_func=controller['user'].create_user, methods=['POST'])
-
+routes.add_url_rule('/v1/init/session', view_func=controller['user'].init_session, methods=['POST'])
 
 
